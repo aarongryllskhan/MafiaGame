@@ -1,0 +1,110 @@
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgb(34 211 238);
+  }
+  50% {
+    border-color: rgb(103 232 249);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* Lucide icon replacement with Unicode symbols */
+.icon-users::before { content: "👥"; }
+.icon-briefcase::before { content: "💼"; }
+.icon-shopping-cart::before { content: "🛒"; }
+.icon-building::before { content: "🏢"; }
+.icon-trending-up::before { content: "📈"; }
+.icon-zap::before { content: "⚡"; }
+.icon-dollar::before { content: "💲"; }
+.icon-award::before { content: "🏆"; }
+.icon-trophy::before { content: "🏆"; }
+.icon-alert::before { content: "⚠️"; }
+.icon-check::before { content: "✓"; }
+.icon-info::before { content: "ℹ️"; }
+.icon-filter::before { content: "🔍"; }
+.icon-arrows::before { content: "↕️"; }
+.icon-target::before { content: "🎯"; }
+.icon-shield::before { content: "🛡️"; }
+.icon-skull::before { content: "💀"; }
+.icon-chevron::before { content: "▼"; }
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+/* Custom instant tooltips */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background-color: #18181b;
+  color: #e4e4e7;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #3f3f46;
+  font-size: 11px;
+  white-space: normal;
+  width: max-content;
+  max-width: 280px;
+  z-index: 10000;
+  pointer-events: none;
+  line-height: 1.4;
+  font-weight: normal;
+  text-transform: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #18181b transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover .tooltip-content {
+  visibility: visible;
+}
+
+/* Territory map hover effects */
+.territory-hover:hover rect {
+  fill-opacity: 0.6 !important;
+  stroke-width: 3;
+  filter: brightness(1.2);
+}
+
+.territory-hover {
+  transition: all 0.2s ease;
+}

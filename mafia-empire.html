@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Streets - Mafia Empire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="mafia-empire.css">
+</head>
+<body class="min-h-screen bg-black text-gray-300" style="font-family: 'Courier New', monospace;">
+    <!-- Header -->
+    <div class="bg-zinc-950 border-b-2 border-red-600">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <h1 class="text-4xl font-bold text-red-600 mb-1 tracking-wider" style="text-shadow: 2px 2px 0px rgba(0,0,0,0.8);">
+                ▓▓ THE STREETS ▓▓
+            </h1>
+            <p class="text-xs text-gray-400 mb-4">// BUILD YOUR EMPIRE OR DIE TRYING</p>
+            
+            <!-- Save/Load Controls -->
+            <div class="flex gap-2 mb-4">
+                <button onclick="saveGame(); showMessage('Game saved!', 'success');" class="px-3 py-1 text-xs font-bold uppercase bg-green-700 hover:bg-green-600 text-white border border-green-500">
+                    💾 SAVE
+                </button>
+                <button onclick="loadGame(); render();" class="px-3 py-1 text-xs font-bold uppercase bg-blue-700 hover:bg-blue-600 text-white border border-blue-500">
+                    📂 LOAD
+                </button>
+                <button onclick="exportSave();" class="px-3 py-1 text-xs font-bold uppercase bg-cyan-700 hover:bg-cyan-600 text-white border border-cyan-500">
+                    📤 EXPORT
+                </button>
+                <label class="px-3 py-1 text-xs font-bold uppercase bg-purple-700 hover:bg-purple-600 text-white border border-purple-500 cursor-pointer">
+                    📥 IMPORT
+                    <input type="file" accept=".json" onchange="importSave(event)" class="hidden">
+                </label>
+                <button onclick="resetGame();" class="px-3 py-1 text-xs font-bold uppercase bg-red-700 hover:bg-red-600 text-white border border-red-500">
+                    🗑️ RESET
+                </button>
+                <span class="px-3 py-1 text-xs text-gray-500 border border-zinc-800 bg-zinc-900">
+                    Auto-saves on actions
+                </span>
+            </div>
+            
+            <!-- Player Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="playerStats">
+                <!-- Stats will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Notifications -->
+    <div class="fixed top-4 right-4 z-[9999] space-y-2 max-w-md" id="notifications">
+        <!-- Notifications will appear here -->
+    </div>
+
+    <!-- Navigation -->
+    <div class="max-w-7xl mx-auto px-4 py-4 border-b border-zinc-900">
+        <div class="flex gap-1 flex-wrap" id="navTabs">
+            <!-- Navigation tabs will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Main Content with Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Main Content Area (3/4 width) -->
+            <div class="lg:col-span-3" id="mainContent">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Sidebar (1/4 width) -->
+            <div class="lg:col-span-1">
+                <div id="historySidebar">
+                    <!-- Activity feed will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mafia-empire-data.js"></script>
+    <script src="mafia-empire.js"></script>
+    <script src="mafia-advanced-jobs.js"></script>
+    <script src="mafia-gangs.js"></script>
+    <script src="mafia-blackmarket.js"></script>
+</body>
+</html>
